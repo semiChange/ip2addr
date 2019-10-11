@@ -18,14 +18,13 @@ demo2.php
 <?php
 require_once "Ip2addr.class.php";
 // create object
-$S = new \Semi\Semi('s.conf');
-$I = new Ip2addr("ip_data.dat",$S);
+$s = new \Semi\Semi('s.conf');
+$i = new Ip2addr("ip_data.dat",$s);
 // get parma ip
 // ["116.62.244.112","192.168.2.5"]
 $arr = $argv[1];    
-$res = $ip->toTranslate();
 // totranslate
-print_r( $I->toTranslate(json_decode($arr,true)));
+print_r( $i->toTranslate(json_decode($arr,true)));
 ```
 
 
