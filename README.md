@@ -27,6 +27,31 @@ $arr = $argv[1];
 print_r( $i->toTranslate(json_decode($arr,true)));
 ```
 
+---
+```php
+<?php
+// 新的版本 semi.so新版还没有上传
+class Ip2addr
+{
+	private $ip_data;
+	private $s = null;
+	public function __construct($file)
+	{
+        $this->s = $this->s = new \Semi\Ss('/var/www/html/s.conf');
+		$this->ip_data = $file;
+	}
+	public function toTranslate($s_ip)
+	{
 
+		$sip = $this->s->conf['sip'];
+        return $sip->s_ip2addr($s_ip,$this->ip_data);
 
+	}
 
+}
+
+$ip = new Ip2addr("/root/ip2addr/ip_data.dat");
+$param = $argv[1];
+$res = $ip->toTranslate($param);
+print_r($res);
+```
